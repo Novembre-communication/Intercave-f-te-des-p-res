@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intercave, Bilan Fête des Pères 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #9B1C2E;
+    --red-light: #f5e6e9;
+    --red-mid: #c0384f;
+    --ink: #111;
+    --ink-mid: #444;
+    --ink-soft: #888;
+    --ink-faint: #bbb;
+    --border: #e5e7eb;
+    --bg: #f7f8fa;
+    --white: #fff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    padding: 48px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /*  HEADER  */
+  .header { margin-bottom: 56px; }
+  .header-eyebrow {
+    font-size: 10px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--red); margin-bottom: 16px;
+  }
+  .header-title {
+    font-size: 42px; font-weight: 900; letter-spacing: -1.5px;
+    line-height: 1.02; color: var(--ink); margin-bottom: 8px;
+  }
+  .header-title span { color: var(--red); }
+  .header-sub { font-size: 15px; font-weight: 500; color: var(--ink-soft); margin-bottom: 24px; }
+  .header-tags { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 100px; padding: 6px 14px;
+    font-size: 12px; font-weight: 600; color: var(--ink-mid);
+  }
+  .tag-accent { background: var(--red); border-color: var(--red); color: var(--white); }
+
+  /*  DIVIDER  */
+  .divider { height: 1px; background: var(--border); margin: 44px 0; }
+
+  /*  SECTION LABEL  */
+  .section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--red); margin-bottom: 20px;
+  }
+
+  /*  KPI STRIP  */
+  .kpi-strip {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); border-radius: 16px;
+    overflow: hidden; margin-bottom: 56px;
+  }
+  .kpi-cell { background: var(--white); padding: 28px 24px; position: relative; }
+  .kpi-cell:first-child { border-radius: 16px 0 0 16px; }
+  .kpi-cell:last-child  { border-radius: 0 16px 16px 0; }
+
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 3px; height: 100%; background: transparent;
+  }
+  
+  .kpi-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--ink-faint); margin-bottom: 10px;
+  }
+  .kpi-value {
+    font-size: 28px; font-weight: 900; letter-spacing: -1px;
+    line-height: 1; color: var(--ink); margin-bottom: 4px;
+  }
+  .kpi-cell:first-child .kpi-value { color: var(--red); }
+  .kpi-sub { font-size: 11px; color: var(--ink-faint); font-weight: 500; }
+
+  /*  CREATIVE  */
+  .creative-section {
+    display: grid; grid-template-columns: 360px 1fr;
+    gap: 40px; align-items: start; margin-bottom: 56px;
+  }
+  .carousel-wrap {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--border); background: var(--white);
+  }
+  .carousel-img {
+    position: relative; width: 100%; height: 320px;
+    background: var(--bg); overflow: hidden;
+  }
+  .carousel-track {
+    display: flex; width: 100%; height: 100%;
+    transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+  }
+  .carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 50%; width: 36px; height: 36px; cursor: pointer;
+    font-size: 14px; display: flex; align-items: center; justify-content: center;
+    color: var(--ink); box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.15s;
+  }
+  .carousel-btn:hover { border-color: var(--red); color: var(--red); }
+  .carousel-footer {
+    padding: 12px 16px; display: flex; align-items: center;
+    justify-content: space-between; border-top: 1px solid #f0f0f5;
+  }
+  .carousel-counter { font-size: 12px; font-weight: 600; color: var(--ink-soft); }
+
+  /*  METRICS RIGHT  */
+  .metrics-right { display: flex; flex-direction: column; gap: 0; padding-top: 4px; }
+  .metric-row {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid #f0f0f5;
+  }
+  .metric-row:last-of-type { border-bottom: none; }
+  .metric-item { padding: 20px 0; padding-right: 20px; }
+  .metric-item:not(:last-child) {
+    border-right: 1px solid #f0f0f5; margin-right: 20px;
+  }
+  .metric-item .m-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px;
+  }
+  .metric-item .m-value {
+    font-size: 26px; font-weight: 900; letter-spacing: -0.8px; color: var(--ink);
+  }
+  .info-note {
+    margin-top: 24px; padding: 14px 18px;
+    background: var(--red-light); border: 1px solid #e8c4cb;
+    border-radius: 12px; font-size: 12.5px; color: var(--ink-mid); line-height: 1.7;
+  }
+
+  /*  TABLE  */
+  .table-wrap {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden; margin-bottom: 56px;
+  }
+  .camp-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .camp-table thead tr { border-bottom: 2px solid var(--red); }
+  .camp-table thead th {
+    padding: 14px 16px; text-align: left;
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--ink-soft); background: var(--white);
+    white-space: nowrap;
+  }
+  .camp-table tbody tr { border-bottom: 1px solid #f5f5f5; transition: background 0.1s; }
+  .camp-table tbody tr:hover { background: #fdf8f9; }
+  .camp-table tbody tr:last-child { border-bottom: none; }
+  .camp-table td { padding: 11px 16px; color: #333; }
+  .rank-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 50%;
+    font-weight: 800; font-size: 10px; flex-shrink: 0;
+  }
+  .r1 { background: var(--red); color: var(--white); }
+  .r2 { background: #f0f0f0; color: #555; }
+  .r3 { background: #f0f0f0; color: #555; }
+  .rn { background: #f7f8fa; color: var(--ink-faint); border: 1px solid #eee; }
+  .r-alert { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+  .total-row td {
+    background: var(--red-light) !important; font-weight: 700;
+    color: var(--red); font-size: 12.5px; border-top: 2px solid #e8c4cb;
+  }
+  .imp-strong { font-weight: 700; color: var(--ink); }
+  .cov-val { font-weight: 600; color: #555; }
+
+  /*  DEMO  */
+  .demo-section { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 56px; }
+  .demo-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px;
+  }
+  .demo-card-title { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 20px; }
+  .age-row {
+    display: grid; grid-template-columns: 90px 1fr 48px;
+    align-items: center; gap: 12px;
+    padding: 9px 0; border-bottom: 1px solid #f5f5f5;
+  }
+  .age-row:last-child { border-bottom: none; }
+  .age-label { font-size: 12px; font-weight: 600; color: #333; }
+  .age-bar-bg { height: 4px; background: #f0f0f0; border-radius: 4px; }
+  .age-bar-fill { height: 4px; border-radius: 4px; }
+  .age-pct { font-size: 12px; font-weight: 700; text-align: right; }
+  .gender-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+  .gender-cell { border-radius: 12px; padding: 20px; text-align: center; }
+  .gender-cell .g-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+  .gender-cell .g-value { font-size: 32px; font-weight: 900; letter-spacing: -1px; }
+  .gender-cell .g-sub { font-size: 11px; margin-top: 4px; font-weight: 500; }
+  .gender-bar-wrap { height: 6px; background: #f0f0f0; border-radius: 6px; overflow: hidden; margin-bottom: 8px; }
+  .gender-bar-fill { height: 6px; border-radius: 6px; }
+  .gender-note {
+    background: #fefce8; border: 1px solid #fef08a;
+    border-radius: 10px; padding: 12px 14px;
+    font-size: 11.5px; color: #713f12; line-height: 1.6;
+  }
+
+  /*  RECO  */
+  .reco-section { margin-bottom: 48px; }
+  .reco-summary {
+    background: var(--ink); border-radius: 16px;
+    padding: 28px 32px; color: rgba(255,255,255,0.72);
+    font-size: 13.5px; line-height: 1.8; margin-bottom: 16px;
+    }
+  .reco-summary strong { color: var(--white); }
+  .reco-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .reco-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 14px; padding: 20px 22px;
+  }
+  .reco-card-title {
+    font-size: 13px; font-weight: 800; color: var(--ink);
+    margin-bottom: 6px; display: flex; align-items: center; gap: 8px;
+  }
+  .reco-card-body { font-size: 12px; color: #666; line-height: 1.65; }
+  .reco-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  /*  FOOTER  */
+  .footer {
+    text-align: center; font-size: 11px; color: var(--ink-faint);
+    padding-top: 32px; border-top: 1px solid var(--border); margin-top: 8px;
+  }
+  .footer-logo {
+    font-size: 10px; font-weight: 800; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--red); margin-bottom: 6px;
+  }
+</style>
+</head>
+<body>
+
+<!--  HEADER  -->
+<div class="header">
+  <div class="header-eyebrow">Intercave · Meta Ads · Bilan de campagne</div>
+  <div class="header-title">Fête des <span>Pères</span><br>2026</div>
+  <div class="header-sub">Campagne carrousel · Notoriété locale · France</div>
+  <div class="header-tags">
+    <div class="tag tag-accent"> Objectif : couverture maximale</div>
+    <div class="tag"> 01/05 → 20/06/2026</div>
+    <div class="tag">61 zones</div>
+    <div class="tag">150 € / zone</div>
+  </div>
+</div>
+
+<!--  KPIs  -->
+<div class="section-label">Résultats globaux</div>
+<div class="kpi-strip">
+  <div class="kpi-cell">
+    <div class="kpi-label">Impressions</div>
+    <div class="kpi-value">8,5M</div>
+    <div class="kpi-sub">8 521 859 au total</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">Couverture</div>
+    <div class="kpi-value">2,88M</div>
+    <div class="kpi-sub">personnes uniques · dédupliqué Meta</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">Répétition</div>
+    <div class="kpi-value">2,96×</div>
+    <div class="kpi-sub">vues / personne</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">CPM moyen</div>
+    <div class="kpi-value">1,07 &euro;</div>
+    <div class="kpi-sub">0,87 € → 2,09 €</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">Budget total</div>
+    <div class="kpi-value">9 147 €</div>
+    <div class="kpi-sub">dépensé sur 61 zones</div>
+  </div>
+</div>
+
+<!--  CRÉATIVE  -->
+<div class="section-label">Créative de campagne</div>
+<div class="creative-section">
+  <div class="carousel-wrap">
+    <div class="carousel-img">
+      <div class="carousel-track" id="carousel-track"></div>
+      <button class="carousel-btn" onclick="prev()" style="left:12px;">&#8592;</button>
+      <button class="carousel-btn" onclick="next()" style="right:12px;">&#8594;</button>
+    </div>
+    <div class="carousel-footer">
+      <div id="carousel-dots" style="display:flex;gap:5px;"></div>
+      <div class="carousel-counter" id="carousel-label">Visuel 1 / 7</div>
+    </div>
+  </div>
+
+  <div class="metrics-right">
+    <div class="metric-row">
+      <div class="metric-item">
+        <div class="m-label">Impressions</div>
+        <div class="m-value">8 521 859</div>
+      </div>
+      <div class="metric-item">
+        <div class="m-label">Couverture</div>
+        <div class="m-value">2 878 710</div>
+      </div>
+      <div class="metric-item">
+        <div class="m-label">Répétition</div>
+        <div class="m-value">2,96×</div>
+      </div>
+    </div>
+    <div class="metric-row">
+      <div class="metric-item">
+        <div class="m-label">CPM moyen</div>
+        <div class="m-value">1,07 €</div>
+      </div>
+      <div class="metric-item">
+        <div class="m-label">CPR moyen</div>
+        <div class="m-value">3,18 €</div>
+      </div>
+      <div class="metric-item">
+        <div class="m-label">Clics totaux</div>
+        <div class="m-value">12 470</div>
+      </div>
+    </div>
+    <div class="info-note">
+       <strong>61 zones</strong> diffusées en France · <strong>150 €</strong> par zone · Total dépensé : <strong>9 147 €</strong>
+    </div>
+  </div>
+</div>
+
+<script>
+var imgs = [
+  'https://i.imgur.com/KcAfHqu.jpg',
+  'https://i.imgur.com/68rpXD6.jpg',
+  'https://i.imgur.com/ARhH6G2.jpg',
+  'https://i.imgur.com/0ZXqr1v.jpg',
+  'https://i.imgur.com/QvapUxD.jpg',
+  'https://i.imgur.com/oXkEWKy.jpg',
+  'https://i.imgur.com/xIFY9HC.jpg'
+];
+var idx = 0;
+function buildCarousel() {
+  var track = document.getElementById('carousel-track');
+  var dots = document.getElementById('carousel-dots');
+  imgs.forEach(function(src, i) {
+    var slide = document.createElement('div');
+    slide.style.cssText = 'min-width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#f7f8fa;flex-shrink:0;';
+    var img = document.createElement('img');
+    img.src = src;
+    img.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;';
+    slide.appendChild(img);
+    track.appendChild(slide);
+    var dot = document.createElement('div');
+    dot.dataset.i = i;
+    dot.style.cssText = 'width:6px;height:6px;border-radius:50%;cursor:pointer;transition:all 0.2s;background:' + (i===0?'#9B1C2E':'#ddd') + ';';
+    dot.addEventListener('click', function() { idx = +this.dataset.i; update(); });
+    dots.appendChild(dot);
+  });
+}
+function update() {
+  document.getElementById('carousel-track').style.transform = 'translateX(-' + (idx*100) + '%)';
+  document.getElementById('carousel-label').textContent = 'Visuel ' + (idx+1) + ' / ' + imgs.length;
+  Array.from(document.getElementById('carousel-dots').children).forEach(function(d,i){
+    d.style.background = i===idx ? '#9B1C2E' : '#ddd';
+    d.style.transform = i===idx ? 'scale(1.3)' : 'scale(1)';
+  });
+}
+function prev() { idx = (idx-1+imgs.length)%imgs.length; update(); }
+function next() { idx = (idx+1)%imgs.length; update(); }
+window.addEventListener('load', function(){ buildCarousel(); update(); });
+</script>
+
+<div class="divider"></div>
+
+<!--  TABLEAU  -->
+<div class="section-label">Classement des zones · impressions décroissantes</div>
+<div class="table-wrap">
+  <table class="camp-table">
+    <thead>
+      <tr>
+        <th style="width:40px;">#</th>
+        <th>Zone</th>
+        <th>Impressions</th>
+        <th>CPM</th>
+        <th>Répétition</th>
+        <th>Couverture</th>
+        <th>CPR</th>
+        <th>Clics</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="rank-badge r1">1</span></td><td class="imp-strong">Saint-Maur-des-Fossés</td><td class="imp-strong">173 351</td><td>0,87 €</td><td>2,20</td><td class="cov-val">78 800</td><td>1,90 €</td><td>212</td></tr>
+      <tr><td><span class="rank-badge r2">2</span></td><td class="imp-strong">Bois Guillaume</td><td class="imp-strong">171 564</td><td>0,87 €</td><td>2,12</td><td class="cov-val">81 088</td><td>1,85 €</td><td>205</td></tr>
+      <tr><td><span class="rank-badge r3">3</span></td><td class="imp-strong">Coulaines</td><td class="imp-strong">168 917</td><td>0,89 €</td><td>2,08</td><td class="cov-val">81 384</td><td>1,84 €</td><td>215</td></tr>
+      <tr><td><span class="rank-badge rn">4</span></td><td>Dechy</td><td>165 728</td><td>0,91 €</td><td>2,81</td><td class="cov-val">59 028</td><td>2,54 €</td><td>219</td></tr>
+      <tr><td><span class="rank-badge rn">5</span></td><td>Carvin</td><td>163 958</td><td>0,91 €</td><td>2,95</td><td class="cov-val">55 612</td><td>2,70 €</td><td>280</td></tr>
+      <tr><td><span class="rank-badge rn">6</span></td><td>Montbéliard</td><td>163 284</td><td>0,92 €</td><td>2,74</td><td class="cov-val">59 688</td><td>2,51 €</td><td>231</td></tr>
+      <tr><td><span class="rank-badge rn">7</span></td><td>Le Mans</td><td>162 533</td><td>0,92 €</td><td>2,10</td><td class="cov-val">77 316</td><td>1,94 €</td><td>235</td></tr>
+      <tr><td><span class="rank-badge rn">8</span></td><td>Ollioules</td><td>162 177</td><td>0,92 €</td><td>2,77</td><td class="cov-val">58 625</td><td>2,56 €</td><td>224</td></tr>
+      <tr><td><span class="rank-badge rn">9</span></td><td>Besançon</td><td>160 003</td><td>0,94 €</td><td>2,54</td><td class="cov-val">62 955</td><td>2,38 €</td><td>228</td></tr>
+      <tr><td><span class="rank-badge rn">10</span></td><td>Saint-Cyr-l'École</td><td>158 503</td><td>0,95 €</td><td>2,15</td><td class="cov-val">73 567</td><td>2,04 €</td><td>216</td></tr>
+      <tr><td><span class="rank-badge rn">11</span></td><td>Marly (Valenciennes)</td><td>158 247</td><td>0,95 €</td><td>2,49</td><td class="cov-val">63 633</td><td>2,36 €</td><td>239</td></tr>
+      <tr><td><span class="rank-badge rn">12</span></td><td>Limoges</td><td>158 082</td><td>0,95 €</td><td>2,41</td><td class="cov-val">65 577</td><td>2,29 €</td><td>231</td></tr>
+      <tr><td><span class="rank-badge rn">13</span></td><td>Sallanches</td><td>157 126</td><td>0,95 €</td><td>2,51</td><td class="cov-val">62 492</td><td>2,40 €</td><td>206</td></tr>
+      <tr><td><span class="rank-badge rn">14</span></td><td>Limoges Centre</td><td>156 497</td><td>0,96 €</td><td>2,42</td><td class="cov-val">64 716</td><td>2,32 €</td><td>184</td></tr>
+      <tr><td><span class="rank-badge rn">15</span></td><td>Villerest</td><td>155 723</td><td>0,96 €</td><td>2,54</td><td class="cov-val">61 342</td><td>2,44 €</td><td>252</td></tr>
+      <tr><td><span class="rank-badge rn">16</span></td><td>Craponne</td><td>153 632</td><td>0,98 €</td><td>2,47</td><td class="cov-val">62 231</td><td>2,41 €</td><td>187</td></tr>
+      <tr><td><span class="rank-badge rn">17</span></td><td>Clairoix</td><td>152 401</td><td>0,98 €</td><td>2,52</td><td class="cov-val">60 419</td><td>2,48 €</td><td>237</td></tr>
+      <tr><td><span class="rank-badge rn">18</span></td><td>Gournay-sur-Marne</td><td>151 778</td><td>0,99 €</td><td>2,42</td><td class="cov-val">62 762</td><td>2,39 €</td><td>181</td></tr>
+      <tr><td><span class="rank-badge rn">19</span></td><td>Saran</td><td>151 472</td><td>0,99 €</td><td>2,92</td><td class="cov-val">51 952</td><td>2,89 €</td><td>174</td></tr>
+      <tr><td><span class="rank-badge rn">20</span></td><td>Niort</td><td>149 460</td><td>1,00 €</td><td>2,46</td><td class="cov-val">60 812</td><td>2,47 €</td><td>216</td></tr>
+      <tr><td><span class="rank-badge rn">21</span></td><td>Carnoux</td><td>148 556</td><td>1,01 €</td><td>2,52</td><td class="cov-val">59 018</td><td>2,54 €</td><td>229</td></tr>
+      <tr><td><span class="rank-badge rn">22</span></td><td>Charmeil</td><td>147 829</td><td>1,01 €</td><td>2,70</td><td class="cov-val">54 773</td><td>2,74 €</td><td>243</td></tr>
+      <tr><td><span class="rank-badge rn">23</span></td><td>Castres</td><td>147 717</td><td>1,02 €</td><td>2,79</td><td class="cov-val">53 024</td><td>2,83 €</td><td>227</td></tr>
+      <tr><td><span class="rank-badge rn">24</span></td><td>Chartres</td><td>146 020</td><td>1,03 €</td><td>2,58</td><td class="cov-val">56 651</td><td>2,65 €</td><td>230</td></tr>
+      <tr><td><span class="rank-badge rn">25</span></td><td>Marignane</td><td>142 647</td><td>1,05 €</td><td>2,59</td><td class="cov-val">55 105</td><td>2,72 €</td><td>225</td></tr>
+      <tr><td><span class="rank-badge rn">26</span></td><td>Saint-Germain-lès-Corbeil</td><td>142 598</td><td>1,05 €</td><td>2,37</td><td class="cov-val">60 246</td><td>2,49 €</td><td>214</td></tr>
+      <tr><td><span class="rank-badge rn">27</span></td><td>Pringy</td><td>142 594</td><td>1,05 €</td><td>2,44</td><td class="cov-val">58 431</td><td>2,57 €</td><td>207</td></tr>
+      <tr><td><span class="rank-badge rn">28</span></td><td>Miribel-les-Échets</td><td>141 388</td><td>1,06 €</td><td>2,34</td><td class="cov-val">60 377</td><td>2,48 €</td><td>196</td></tr>
+      <tr><td><span class="rank-badge rn">29</span></td><td>Thonon-les-Bains</td><td>139 825</td><td>1,07 €</td><td>2,75</td><td class="cov-val">50 792</td><td>2,95 €</td><td>234</td></tr>
+      <tr><td><span class="rank-badge rn">30</span></td><td>Meung-sur-Loire</td><td>139 593</td><td>1,07 €</td><td>2,91</td><td class="cov-val">48 017</td><td>3,12 €</td><td>193</td></tr>
+      <tr><td><span class="rank-badge rn">31</span></td><td>Saint-Donat-sur-l'Herbasse</td><td>138 449</td><td>1,08 €</td><td>2,70</td><td class="cov-val">51 232</td><td>2,93 €</td><td>179</td></tr>
+      <tr><td><span class="rank-badge rn">32</span></td><td>Vigneux-sur-Seine</td><td>137 928</td><td>1,09 €</td><td>2,18</td><td class="cov-val">63 329</td><td>2,37 €</td><td>187</td></tr>
+      <tr><td><span class="rank-badge rn">33</span></td><td>Combs-la-Ville</td><td>137 912</td><td>1,09 €</td><td>2,35</td><td class="cov-val">58 774</td><td>2,55 €</td><td>187</td></tr>
+      <tr><td><span class="rank-badge rn">34</span></td><td>Joué-lès-Tours</td><td>137 685</td><td>1,09 €</td><td>2,66</td><td class="cov-val">51 719</td><td>2,90 €</td><td>188</td></tr>
+      <tr><td><span class="rank-badge rn">35</span></td><td>Salon-de-Provence</td><td>137 219</td><td>1,09 €</td><td>2,66</td><td class="cov-val">51 553</td><td>2,91 €</td><td>201</td></tr>
+      <tr><td><span class="rank-badge rn">36</span></td><td>Ozoir-la-Ferrière</td><td>136 658</td><td>1,10 €</td><td>2,05</td><td class="cov-val">66 791</td><td>2,25 €</td><td>200</td></tr>
+      <tr><td><span class="rank-badge rn">37</span></td><td>Brignoles</td><td>133 981</td><td>1,12 €</td><td>2,92</td><td class="cov-val">45 925</td><td>3,26 €</td><td>246</td></tr>
+      <tr><td><span class="rank-badge rn">38</span></td><td>Bourgoin-Jallieu</td><td>133 451</td><td>1,12 €</td><td>2,50</td><td class="cov-val">53 279</td><td>2,82 €</td><td>210</td></tr>
+      <tr><td><span class="rank-badge rn">39</span></td><td>Langon</td><td>133 265</td><td>1,13 €</td><td>2,72</td><td class="cov-val">49 037</td><td>3,06 €</td><td>209</td></tr>
+      <tr><td><span class="rank-badge rn">40</span></td><td>Croix</td><td>133 145</td><td>1,13 €</td><td>2,46</td><td class="cov-val">54 027</td><td>2,78 €</td><td>205</td></tr>
+      <tr><td><span class="rank-badge rn">41</span></td><td>Sainte-Marie-des-Champs</td><td>130 919</td><td>1,15 €</td><td>2,95</td><td class="cov-val">44 331</td><td>3,38 €</td><td>242</td></tr>
+      <tr><td><span class="rank-badge rn">42</span></td><td>Pornic</td><td>130 645</td><td>1,15 €</td><td>2,43</td><td class="cov-val">53 795</td><td>2,79 €</td><td>201</td></tr>
+      <tr><td><span class="rank-badge rn">43</span></td><td>Solliès-Pont</td><td>130 114</td><td>1,15 €</td><td>2,78</td><td class="cov-val">46 735</td><td>3,21 €</td><td>160</td></tr>
+      <tr><td><span class="rank-badge rn">44</span></td><td>Couilly-Pont-aux-Dames</td><td>129 913</td><td>1,15 €</td><td>2,53</td><td class="cov-val">51 424</td><td>2,92 €</td><td>177</td></tr>
+      <tr><td><span class="rank-badge rn">45</span></td><td>Montlouis</td><td>126 808</td><td>1,18 €</td><td>2,80</td><td class="cov-val">45 361</td><td>3,31 €</td><td>202</td></tr>
+      <tr><td><span class="rank-badge rn">46</span></td><td>Bergerac</td><td>126 024</td><td>1,19 €</td><td>2,76</td><td class="cov-val">45 586</td><td>3,29 €</td><td>236</td></tr>
+      <tr><td><span class="rank-badge rn">47</span></td><td>Vienne</td><td>125 722</td><td>1,19 €</td><td>2,51</td><td class="cov-val">50 026</td><td>3,00 €</td><td>178</td></tr>
+      <tr><td><span class="rank-badge rn">48</span></td><td>Coulommiers</td><td>124 948</td><td>1,20 €</td><td>2,80</td><td class="cov-val">44 549</td><td>3,37 €</td><td>184</td></tr>
+      <tr><td><span class="rank-badge rn">49</span></td><td>Cosnes</td><td>124 863</td><td>1,20 €</td><td>3,04</td><td class="cov-val">41 022</td><td>3,66 €</td><td>237</td></tr>
+      <tr><td><span class="rank-badge rn">50</span></td><td>Itteville</td><td>124 822</td><td>1,20 €</td><td>2,65</td><td class="cov-val">47 025</td><td>3,19 €</td><td>188</td></tr>
+      <tr><td><span class="rank-badge rn">51</span></td><td>Fontainebleau</td><td>124 053</td><td>1,21 €</td><td>2,20</td><td class="cov-val">56 308</td><td>2,66 €</td><td>147</td></tr>
+      <tr><td><span class="rank-badge rn">52</span></td><td>Gargenville</td><td>122 885</td><td>1,22 €</td><td>2,87</td><td class="cov-val">42 797</td><td>3,50 €</td><td>183</td></tr>
+      <tr><td><span class="rank-badge rn">53</span></td><td>Boissy-Saint-Léger</td><td>122 751</td><td>1,22 €</td><td>2,33</td><td class="cov-val">52 589</td><td>2,85 €</td><td>188</td></tr>
+      <tr><td><span class="rank-badge rn">54</span></td><td>Millau</td><td>121 429</td><td>1,24 €</td><td>3,20</td><td class="cov-val">37 950</td><td>3,95 €</td><td>206</td></tr>
+      <tr><td><span class="rank-badge rn">55</span></td><td>Bourg-Achard</td><td>119 676</td><td>1,25 €</td><td>2,83</td><td class="cov-val">42 335</td><td>3,54 €</td><td>203</td></tr>
+      <tr><td><span class="rank-badge rn">56</span></td><td>Suresnes</td><td>118 498</td><td>1,27 €</td><td>3,03</td><td class="cov-val">39 127</td><td>3,83 €</td><td>151</td></tr>
+      <tr><td><span class="rank-badge rn">57</span></td><td>Issoire</td><td>117 226</td><td>1,28 €</td><td>2,73</td><td class="cov-val">42 952</td><td>3,49 €</td><td>164</td></tr>
+      <tr><td><span class="rank-badge rn">58</span></td><td>Thiais</td><td>115 635</td><td>1,30 €</td><td>2,28</td><td class="cov-val">50 634</td><td>2,96 €</td><td>165</td></tr>
+      <tr><td><span class="rank-badge rn">59</span></td><td>Bitschwiller-lès-Thann</td><td>112 330</td><td>1,33 €</td><td>2,71</td><td class="cov-val">41 440</td><td>3,62 €</td><td>179</td></tr>
+      <tr><td><span class="rank-badge rn">60</span></td><td>Orsay</td><td>108 022</td><td>1,39 €</td><td>2,48</td><td class="cov-val">43 615</td><td>3,44 €</td><td>128</td></tr>
+      <tr><td><span class="rank-badge r-alert">61</span></td><td style="color:#dc2626;font-weight:600;">Le Port Marly </td><td style="color:#dc2626;font-weight:600;">71 680</td><td style="color:#dc2626;">2,09 €</td><td>2,87</td><td class="cov-val">24 977</td><td style="color:#dc2626;">6,00 €</td><td>169</td></tr>
+      <tr class="total-row">
+        <td colspan="2">Total · 61 zones</td>
+        <td>8 521 859</td>
+        <td>~1,07 €</td>
+        <td>~2,96×</td>
+        <td>2 878 710</td>
+        <td>~2,85 €</td>
+        <td>12 470</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="divider"></div>
+
+<!--  DÉMO  -->
+<div class="section-label">Démographie · toutes zones</div>
+<div class="demo-section">
+
+  <!-- ÂGE -->
+  <div class="demo-card">
+    <div class="demo-card-title">Répartition par tranche d'âge</div>
+    <div class="age-row">
+      <div class="age-label">18–24 ans</div>
+      <div class="age-bar-bg"><div class="age-bar-fill" style="width:59%;background:#d1c0c4;"></div></div>
+      <div class="age-pct" style="color:#999;">14,0 %</div>
+    </div>
+    <div class="age-row">
+      <div class="age-label">25–34 ans</div>
+      <div class="age-bar-bg"><div class="age-bar-fill" style="width:100%;background:#9B1C2E;"></div></div>
+      <div class="age-pct" style="color:#9B1C2E;">23,6 %</div>
+    </div>
+    <div class="age-row">
+      <div class="age-label">35–44 ans</div>
+      <div class="age-bar-bg"><div class="age-bar-fill" style="width:90%;background:#111;"></div></div>
+      <div class="age-pct" style="color:#111;">21,2 %</div>
+    </div>
+    <div class="age-row">
+      <div class="age-label">45–54 ans</div>
+      <div class="age-bar-bg"><div class="age-bar-fill" style="width:71%;background:#777;"></div></div>
+      <div class="age-pct" style="color:#777;">16,7 %</div>
+    </div>
+    <div class="age-row">
+      <div class="age-label">55–64 ans</div>
+      <div class="age-bar-bg"><div class="age-bar-fill" style="width:57%;background:#aaa;"></div></div>
+      <div class="age-pct" style="color:#aaa;">13,5 %</div>
+    </div>
+    <div class="age-row">
+      <div class="age-label">65+ ans</div>
+      <div class="age-bar-bg"><div class="age-bar-fill" style="width:47%;background:#ccc;"></div></div>
+      <div class="age-pct" style="color:#bbb;">11,1 %</div>
+    </div>
+    <div style="margin-top:16px;padding:10px 14px;background:var(--red-light);border-radius:8px;font-size:11.5px;color:var(--red);">
+      Tranches les plus touchées : <strong>25–34 ans (23,6 %)</strong> et <strong>35–44 ans (21,2 %)</strong> · couverture large sur les 25–54 ans (61,5 % combinés)
+    </div>
+  </div>
+
+  <!-- GENRE -->
+  <div class="demo-card">
+    <div class="demo-card-title">Répartition par genre</div>
+    <div class="gender-row">
+      <div class="gender-cell" style="background:#f5e6e9;">
+        <div class="g-label" style="color:var(--red);">Hommes</div>
+        <div class="g-value" style="color:var(--red);">59,6 %</div>
+        <div class="g-sub" style="color:#c0384f;">5 078 566 impressions</div>
+      </div>
+      <div class="gender-cell" style="background:#f7f8fa;border:1px solid #eee;">
+        <div class="g-label" style="color:#888;">Femmes</div>
+        <div class="g-value" style="color:#555;">39,0 %</div>
+        <div class="g-sub" style="color:#aaa;">3 321 451 impressions</div>
+      </div>
+    </div>
+    <div class="gender-bar-wrap">
+      <div class="gender-bar-fill" style="width:59.6%;background:var(--red);border-radius:6px 0 0 6px;display:inline-block;"></div><div style="width:39.0%;height:6px;background:#d1d5db;display:inline-block;"></div><div style="width:1.4%;height:6px;background:#e5e7eb;display:inline-block;border-radius:0 6px 6px 0;"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:10px;color:#aaa;margin-bottom:20px;">
+      <span>Hommes 59,6 %</span><span>Femmes 39,0 %</span><span>Non défini 1,4 %</span>
+    </div>
+    <div class="gender-note">
+       La diffusion s'est naturellement orientée vers les hommes, cohérent avec la thématique Fête des Pères. Les femmes restent une cible clé. Elles sont souvent acheteuses du cadeau et représentent un potentiel à ne pas sous-estimer.
+    </div>
+  </div>
+</div>
+
+
+<div class="divider"></div>
+
+<!--  RECO  -->
+<div class="section-label">Analyse & recommandations</div>
+<div class="reco-section">
+  <div class="reco-summary">
+    La campagne a généré <strong>8,5M d'impressions</strong> sur 61 zones pour <strong>9 147 €</strong> dépensés, soit un CPM moyen de <strong>1,07 €</strong>, compétitif et cohérent avec les standards Meta en notoriété locale. Les zones résidentielles confirment leur efficacité (<strong>Saint-Maur, Bois Guillaume, Coulaines</strong>). La répétition de <strong>2,96×</strong> est en légère hausse vs le Printemps (2,27×), signal à surveiller. La zone Le Port Marly, nouvelle cette campagne, affiche un CPM de <strong>2,09 €</strong> et un CPR de <strong>6,00 €</strong>, très au-dessus de la moyenne.
+  </div>
+  <div class="reco-grid">
+    <div class="reco-card">
+      <div class="reco-card-title"><div class="reco-dot" style="background:var(--red);"></div>Zones à prioriser en vague 2</div>
+      <div class="reco-card-body">Saint-Maur, Bois Guillaume, Coulaines, Le Mans et Saint-Cyr-l'École affichent les meilleurs CPM sur deux campagnes consécutives. À budgéter en priorité.</div>
+    </div>
+    <div class="reco-card">
+      <div class="reco-card-title"><div class="reco-dot" style="background:#dc2626;"></div>Exclure Le Port Marly</div>
+      <div class="reco-card-body">CPM 2,09 € et CPR 6,00 €, soit 2× au-dessus de la moyenne. Cette zone ne justifie pas son budget et devrait être retirée de la prochaine campagne.</div>
+    </div>
+    <div class="reco-card">
+      <div class="reco-card-title"><div class="reco-dot" style="background:#555;"></div>Ajouter des visuels à destination des femmes</div>
+      <div class="reco-card-body">La diffusion s'est naturellement orientée vers les hommes (60/40). Les femmes restent pourtant une cible clé, souvent acheteuses du cadeau. Intégrer quelques visuels qui leur parlent directement serait un vrai plus pour ne pas laisser cette audience de côté.</div>
+    </div>
+    <div class="reco-card">
+      <div class="reco-card-title"><div class="reco-dot" style="background:#aaa;"></div>Surveiller la répétition</div>
+      <div class="reco-card-body">La répétition est à 2,96×, proche du seuil des 3×. Si on souhaite augmenter les budgets sur la prochaine campagne, il faudra prévoir plus de visuels pour garder la créa fraîche et ne pas dépasser ce seuil.</div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;padding:40px 0 16px;">
+  <div class="footer-logo">Intercave × Novembre · 2026</div>
+</div>
+<div class="footer">Document réalisé par Novembre communication · Bilan campagne Fête des Pères 2026</div>
+
+</body>
+</html>
